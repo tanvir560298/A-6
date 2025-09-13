@@ -10,9 +10,9 @@
 
     <!-- font awesome cdn -->
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class=".font">
 
     <!-- navbar code start -->
 
@@ -66,6 +66,48 @@
     </section>
 
     <!-- hero section end -->
+    
+    <!-- api integration start -->
+
+
+    <div class="api-integration-parent flex flex-col lg:flex-row bg-[#F0FDF4] mx-auto">
+
+    <!-- category section start -->
+    <section id="category-container" class="lg:w-2/12 p-4">
+        <h3 class="font-bold text-center ">Categories</h3>
+        <div id="categories" class="flex flex-col"></div>
+     </section>
+
+    <!-- category section end -->
+
+    <div id="spinner" class="fixed inset-0 flex items-center justify-center bg-white bg-opacity-50 z-50 hidden">
+    <div class="loader border-4 border-green-700 border-t-4 border-t-yellow-400 rounded-full w-12 h-12 animate-spin"></div>
+</div>
+
+
+    <!-- api card section start -->
+     <section id="api-card-container" class=" lg:w-8/12 p-4 mx-auto">
+        <div id="api-cards" class="grid grid-cols-1 lg:grid-cols-3 gap-2"></div>
+     </section>
+    <!-- api card section end -->
+
+    <!-- price div holder start -->
+
+    <div class="price_div_continer w-2/12 bg-white m-5">
+        <h2 class="p-5 font-semi">Your Cart</h2>
+        <div id="price-divs"></div>
+        <hr style="border: 1px solid #B0B0B0;" />
+        <p class="flex justify-end text-end font-semibold p-2"><span>Total: </span> <span id="total-price">0</span></p>
+    </div>
+
+    <!-- price div holder end -->
+
+
+    </div>
+
+    <!-- api integration end -->
+
+
 
     <!-- Campaign section start -->
         <div class="campaign">
@@ -136,6 +178,33 @@
    <!-- footer section end -->
 
    <script src="index.js"></script>
+
+<!-- Open the modal using ID.showModal() method -->
+<!-- <button class="btn" onclick="my_modal_5.showModal()">open modal</button> -->
+<dialog id="plantModal" class="modal modal-bottom sm:modal-middle">
+  <div class="modal-box p-0 overflow-hidden w-96">
+    <div class="card bg-base-100 shadow-sm">
+      <h1 class="font-bold text-center p-4" id="modal-title">Plant Name</h1>
+      <figure class="h-50 w-full px-2 py-2 flex justify-center">
+    <img id="modal-image" src="" alt="plant image" class="rounded-xl object-contain h-full w-full max-h-60" />
+    </figure>
+      <div class="card-body items-start text-left">
+        <h2 class="card-title" id="modal-category">Category: Category Name</h2>
+        <p id="modal-price">Price: ৳0</p>
+        <p id="modal-description">Description here</p>
+        <div class="card-actions">
+          <button class="btn text-black w-full" onclick="closeModal()">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</dialog>
+
+
+
+
+
+
 
 </body>
 </html>
